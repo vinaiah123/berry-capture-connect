@@ -6,6 +6,8 @@ type ThemeType = 'berry' | 'forest' | 'matcha' | 'jade' | 'teal';
 interface ThemeContextType {
   currentTheme: ThemeType;
   setTheme: (theme: ThemeType) => void;
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
   themes: {
     id: ThemeType;
     name: string;
@@ -56,6 +58,8 @@ const defaultThemes = [
 const ThemeContext = createContext<ThemeContextType>({
   currentTheme: 'jade',
   setTheme: () => {},
+  isDarkMode: false,
+  toggleDarkMode: () => {},
   themes: defaultThemes,
 });
 
@@ -67,19 +71,35 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return (savedTheme as ThemeType) || 'jade';
   });
 
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const savedMode = localStorage.getItem('berrycast-dark-mode');
+    return savedMode === 'true';
+  });
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('berrycast-dark-mode', (!isDarkMode).toString());
+  };
+
   const setTheme = (theme: ThemeType) => {
     setCurrentTheme(theme);
     localStorage.setItem('berrycast-theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
   };
 
   useEffect(() => {
-    // Set initial theme based on localStorage or default
+    // Set initial theme and mode based on localStorage
     document.documentElement.setAttribute('data-theme', currentTheme);
-  }, [currentTheme]);
+    document.documentElement.classList.toggle('dark', isDarkMode);
+  }, [currentTheme, isDarkMode]);
 
   return (
-    <ThemeContext.Provider value={{ currentTheme, setTheme, themes: defaultThemes }}>
+    <ThemeContext.Provider value={{ 
+      currentTheme, 
+      setTheme, 
+      isDarkMode, 
+      toggleDarkMode, 
+      themes: defaultThemes 
+    }}>
       {children}
     </ThemeContext.Provider>
   );
