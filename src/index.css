@@ -1,37 +1,39 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 33% 98%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 201 95% 45%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 204 90% 31%;
+    --primary-foreground: 210 33% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 48%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 204 80% 96%;
+    --accent-foreground: 204 90% 31%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 33% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 201 95% 45%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 204 90% 31%;
 
     --radius: 0.5rem;
   }
@@ -46,7 +48,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 201 95% 45%;
+    --primary: 204 90% 40%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -79,7 +81,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-tight;
+    @apply font-sans tracking-tight font-medium;
   }
 }
 
@@ -109,7 +111,7 @@
   }
   
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 py-2;
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 py-2 shadow-samurai;
   }
   
   .button-secondary {
@@ -122,6 +124,10 @@
   
   .button-ghost {
     @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-6 py-2;
+  }
+
+  .samurai-card {
+    @apply bg-white rounded-xl p-6 border border-zen-200 shadow-samurai transition-all duration-300 hover:shadow-elevated;
   }
 }
 
@@ -138,7 +144,7 @@
 .fade-in-stagger > *:nth-child(6) { animation-delay: 0.6s; }
 
 .feature-card {
-  @apply bg-white rounded-xl p-6 border border-gray-100 shadow-subtle transition-all duration-300 hover:shadow-elevated;
+  @apply bg-white rounded-xl p-6 border border-zen-100 shadow-subtle transition-all duration-300 hover:shadow-samurai;
 }
 
 .slide-in-on-scroll {

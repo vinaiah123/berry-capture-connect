@@ -63,17 +63,41 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				samurai: {
+					50: '#f5f5f5',
+					100: '#e6e6e6',
+					200: '#cccccc',
+					300: '#b3b3b3',
+					400: '#999999',
+					500: '#808080',
+					600: '#666666',
+					700: '#4d4d4d',
+					800: '#333333',
+					900: '#1a1a1a',
+				},
 				berry: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e',
+					50: '#f3f9ff',
+					100: '#e6f4fe',
+					200: '#bfe3fd',
+					300: '#77c7fa',
+					400: '#3aadf7',
+					500: '#0f91eb',
+					600: '#0477c9',
+					700: '#0260a2',
+					800: '#034d85',
+					900: '#023b66',
+				},
+				zen: {
+					50: '#f7f8f8',
+					100: '#eef0f2',
+					200: '#d9dde0',
+					300: '#b9c1c9',
+					400: '#94a1ad',
+					500: '#768592',
+					600: '#5d6b79',
+					700: '#4a5562',
+					800: '#3d4753',
+					900: '#2c333d',
 				}
 			},
 			borderRadius: {
@@ -82,7 +106,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				sans: ['Work Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -132,7 +156,8 @@ export default {
 				'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
 				'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
 				'elevated': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
-				'premium': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01)'
+				'premium': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01)',
+				'samurai': '0 4px 16px rgba(2, 59, 102, 0.1)'
 			}
 		}
 	},
