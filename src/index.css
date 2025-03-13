@@ -6,7 +6,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  [data-theme="berry"] {
     --background: 210 40% 98%;
     --foreground: 220 20% 20%;
 
@@ -36,6 +37,126 @@
     --ring: 210 90% 50%;
 
     --radius: 0.5rem;
+  }
+
+  [data-theme="forest"] {
+    --background: 150 30% 98%;
+    --foreground: 150 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 20% 15%;
+
+    --primary: 150 40% 35%;
+    --primary-foreground: 150 30% 98%;
+
+    --secondary: 150 14% 96%;
+    --secondary-foreground: 150 20% 15%;
+
+    --muted: 150 14% 96%;
+    --muted-foreground: 150 10% 48%;
+
+    --accent: 150 40% 95%;
+    --accent-foreground: 150 40% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 150 30% 98%;
+
+    --border: 150 13% 90%;
+    --input: 150 13% 90%;
+    --ring: 150 40% 35%;
+  }
+
+  [data-theme="matcha"] {
+    --background: 130 30% 98%;
+    --foreground: 130 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 130 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 130 20% 15%;
+
+    --primary: 130 40% 40%;
+    --primary-foreground: 130 30% 98%;
+
+    --secondary: 130 14% 96%;
+    --secondary-foreground: 130 20% 15%;
+
+    --muted: 130 14% 96%;
+    --muted-foreground: 130 10% 48%;
+
+    --accent: 350 80% 96%;
+    --accent-foreground: 350 80% 50%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 130 30% 98%;
+
+    --border: 130 13% 90%;
+    --input: 130 13% 90%;
+    --ring: 130 40% 40%;
+  }
+
+  [data-theme="jade"] {
+    --background: 160 30% 98%;
+    --foreground: 160 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 20% 15%;
+
+    --primary: 160 50% 30%;
+    --primary-foreground: 160 30% 98%;
+
+    --secondary: 160 14% 96%;
+    --secondary-foreground: 160 20% 15%;
+
+    --muted: 160 14% 96%;
+    --muted-foreground: 160 10% 48%;
+
+    --accent: 45 90% 85%;
+    --accent-foreground: 45 90% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 160 30% 98%;
+
+    --border: 160 13% 90%;
+    --input: 160 13% 90%;
+    --ring: 160 50% 30%;
+  }
+
+  [data-theme="teal"] {
+    --background: 185 30% 98%;
+    --foreground: 185 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 185 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 185 20% 15%;
+
+    --primary: 185 65% 40%;
+    --primary-foreground: 185 30% 98%;
+
+    --secondary: 185 14% 96%;
+    --secondary-foreground: 185 20% 15%;
+
+    --muted: 185 14% 96%;
+    --muted-foreground: 185 10% 48%;
+
+    --accent: 20 70% 85%;
+    --accent-foreground: 20 70% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 185 30% 98%;
+
+    --border: 185 13% 90%;
+    --input: 185 13% 90%;
+    --ring: 185 65% 40%;
   }
 
   .dark {
@@ -157,4 +278,13 @@
 
 .header-blur {
   @apply bg-background/80 backdrop-blur-md border-b border-border/40;
+}
+
+/* Theme transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html [data-theme] * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, shadow 0.3s ease;
 }

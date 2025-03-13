@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 const queryClient = new QueryClient();
 
@@ -35,53 +37,56 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            
-            {/* Feature Pages */}
-            <Route path="/features" element={<Index />} />
-            <Route path="/features/screen-recorder" element={<Index />} />
-            <Route path="/features/ai-tools" element={<Index />} />
-            <Route path="/features/video-hosting" element={<Index />} />
-            <Route path="/features/screenshot" element={<Index />} />
-            <Route path="/features/webcam" element={<Index />} />
-            <Route path="/features/sdk" element={<Index />} />
-            
-            {/* Use Case Pages */}
-            <Route path="/use-cases" element={<Index />} />
-            <Route path="/use-cases/marketing" element={<Index />} />
-            <Route path="/use-cases/sales" element={<Index />} />
-            <Route path="/use-cases/support" element={<Index />} />
-            <Route path="/use-cases/education" element={<Index />} />
-            <Route path="/use-cases/engineering" element={<Index />} />
-            <Route path="/use-cases/team" element={<Index />} />
-            
-            {/* Company Pages */}
-            <Route path="/pricing" element={<Index />} />
-            <Route path="/about" element={<Index />} />
-            <Route path="/blog" element={<Index />} />
-            <Route path="/contact" element={<Index />} />
-            <Route path="/careers" element={<Index />} />
-            
-            {/* Auth Pages */}
-            <Route path="/login" element={<Index />} />
-            <Route path="/signup" element={<Index />} />
-            
-            {/* Legal Pages */}
-            <Route path="/terms" element={<Index />} />
-            <Route path="/privacy" element={<Index />} />
-            <Route path="/cookies" element={<Index />} />
-            <Route path="/sitemap" element={<Index />} />
-            
-            {/* Catch-all route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      <ThemeProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              
+              {/* Feature Pages */}
+              <Route path="/features" element={<Index />} />
+              <Route path="/features/screen-recorder" element={<Index />} />
+              <Route path="/features/ai-tools" element={<Index />} />
+              <Route path="/features/video-hosting" element={<Index />} />
+              <Route path="/features/screenshot" element={<Index />} />
+              <Route path="/features/webcam" element={<Index />} />
+              <Route path="/features/sdk" element={<Index />} />
+              
+              {/* Use Case Pages */}
+              <Route path="/use-cases" element={<Index />} />
+              <Route path="/use-cases/marketing" element={<Index />} />
+              <Route path="/use-cases/sales" element={<Index />} />
+              <Route path="/use-cases/support" element={<Index />} />
+              <Route path="/use-cases/education" element={<Index />} />
+              <Route path="/use-cases/engineering" element={<Index />} />
+              <Route path="/use-cases/team" element={<Index />} />
+              
+              {/* Company Pages */}
+              <Route path="/pricing" element={<Index />} />
+              <Route path="/about" element={<Index />} />
+              <Route path="/blog" element={<Index />} />
+              <Route path="/contact" element={<Index />} />
+              <Route path="/careers" element={<Index />} />
+              
+              {/* Auth Pages */}
+              <Route path="/login" element={<Index />} />
+              <Route path="/signup" element={<Index />} />
+              
+              {/* Legal Pages */}
+              <Route path="/terms" element={<Index />} />
+              <Route path="/privacy" element={<Index />} />
+              <Route path="/cookies" element={<Index />} />
+              <Route path="/sitemap" element={<Index />} />
+              
+              {/* Catch-all route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <ThemeSwitcher />
+          </BrowserRouter>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };
