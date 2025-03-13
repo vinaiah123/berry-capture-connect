@@ -1,15 +1,10 @@
 
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stylized berry shape for favicon -->
-  <circle cx="16" cy="16" r="14" fill="url(#favicon_gradient)"/>
+  <rect width="32" height="32" rx="8" fill="url(#favicon_gradient)"/>
+  <path d="M14 9H17.5C18.163 9 18.799 9.26339 19.2678 9.73223C19.7366 10.2011 20 10.837 20 11.5C20 12.0986 19.762 12.6613 19.35 13.05C19.762 13.4387 20 14.0014 20 14.6C20 15.263 19.7366 15.8989 19.2678 16.3678C18.799 16.8366 18.163 17.1 17.5 17.1H14V9ZM17.5 12.5C17.6326 12.5 17.7598 12.4473 17.8536 12.3536C17.9473 12.2598 18 12.1326 18 12C18 11.8674 17.9473 11.7402 17.8536 11.6464C17.7598 11.5527 17.6326 11.5 17.5 11.5H16V12.5H17.5ZM17.5 14.6C17.6326 14.6 17.7598 14.5473 17.8536 14.4536C17.9473 14.3598 18 14.2326 18 14.1C18 13.9674 17.9473 13.8402 17.8536 13.7464C17.7598 13.6527 17.6326 13.6 17.5 13.6H16V14.6H17.5Z" fill="white"/>
   
-  <!-- Center cross/plus mark - distinctive element -->
-  <path d="M16 10C15.448 10 15 10.448 15 11V21C15 21.552 15.448 22 16 22C16.552 22 17 21.552 17 21V11C17 10.448 16.552 10 16 10Z" fill="white"/>
-  <path d="M21 16C21 15.448 20.552 15 20 15H10C9.448 15 9 15.448 9 16C9 16.552 9.448 17 10 17H20C20.552 17 21 16.552 21 16Z" fill="white"/>
-  
-  <!-- Gradient definition -->
   <defs>
-    <linearGradient id="favicon_gradient" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+    <linearGradient id="favicon_gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
       <stop stop-color="#9b87f5"/>
       <stop offset="0.5" stop-color="#7E69AB"/>
       <stop offset="1" stop-color="#6E59A5"/>

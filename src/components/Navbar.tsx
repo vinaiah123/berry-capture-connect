@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -31,7 +32,11 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'header-blur py-2' : 'py-4'}`}>
       <nav className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
-          <img src="/berrycast-logo.svg" alt="Berrycast" className={`h-8 transition-opacity ${isDarkMode ? 'brightness-110 contrast-125' : ''}`} />
+          <img 
+            src="/berrycast-logo.svg" 
+            alt="Berrycast" 
+            className={`h-8 transition-opacity ${isDarkMode ? 'brightness-110 contrast-125' : ''}`} 
+          />
         </Link>
         
         <div className="hidden lg:flex items-center space-x-8">

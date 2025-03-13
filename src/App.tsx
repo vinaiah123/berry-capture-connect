@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { HelmetProvider } from 'react-helmet-async';
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import SalesUseCasePage from "./pages/SalesUseCasePage";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 
@@ -59,7 +60,7 @@ const App = () => {
                 {/* Use Case Pages */}
                 <Route path="/use-cases" element={<Index />} />
                 <Route path="/use-cases/marketing" element={<Index />} />
-                <Route path="/use-cases/sales" element={<Index />} />
+                <Route path="/use-cases/sales" element={<SalesUseCasePage />} />
                 <Route path="/use-cases/support" element={<Index />} />
                 <Route path="/use-cases/education" element={<Index />} />
                 <Route path="/use-cases/engineering" element={<Index />} />
