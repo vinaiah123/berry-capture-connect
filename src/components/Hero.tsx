@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,13 +27,15 @@ const Hero = () => {
               Create, share, and collaborate with instant screen recordings and AI-powered insights. No downloads required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/signup" className="button-primary text-base py-6 px-8 rounded-lg">
-                Try Berrycast Free
-              </Link>
-              <Link to="/features" className="button-outline text-base py-6 px-8 rounded-lg flex items-center justify-center group">
-                <span>See all features</span>
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <Button variant="jade-gold" size="lg" asChild>
+                <Link to="/signup">Try Berrycast Free</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/features" className="group">
+                  <span>See all features</span>
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
             <div className="pt-6">
               <p className="text-sm text-foreground/60">

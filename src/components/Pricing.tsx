@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, HelpCircle } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const PricingCard = ({ 
   title, 
@@ -39,23 +40,22 @@ const PricingCard = ({
         <ul className="space-y-3 mb-6">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start">
-              <Check className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
+              <div className="h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center text-accent shrink-0 mr-3 mt-0.5">
+                <Check className="h-4 w-4" />
+              </div>
               <span className="text-sm">{feature}</span>
             </li>
           ))}
         </ul>
       </div>
       
-      <Link 
-        to="/signup" 
-        className={`w-full py-2 px-4 rounded-lg text-center transition-all ${
-          popular 
-            ? 'bg-primary text-white hover:bg-primary/90' 
-            : 'bg-secondary text-foreground hover:bg-secondary/80'
-        }`}
+      <Button 
+        variant={popular ? "jade-gold" : "outline"}
+        className="w-full"
+        asChild
       >
-        {cta}
-      </Link>
+        <Link to="/signup">{cta}</Link>
+      </Button>
     </div>
   );
 };
