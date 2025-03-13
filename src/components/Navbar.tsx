@@ -1,12 +1,13 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +31,9 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'header-blur py-2' : 'py-4'}`}>
       <nav className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
-          <span className="text-2xl font-semibold text-primary">Berrycast</span>
+          <img src="/berrycast-logo.svg" alt="Berrycast" className={`h-8 transition-opacity ${isDarkMode ? 'brightness-110 contrast-125' : ''}`} />
         </Link>
         
-        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-8">
           <div className="relative group">
             <button 
@@ -90,7 +90,6 @@ const Navbar = () => {
           </Link>
         </div>
         
-        {/* Mobile Menu Button */}
         <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? (
             <X className="h-6 w-6" />
@@ -100,7 +99,6 @@ const Navbar = () => {
         </button>
       </nav>
       
-      {/* Mobile Menu */}
       <div className={`lg:hidden fixed inset-0 top-16 bg-background z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="container p-4 flex flex-col space-y-6">
           <div className="flex flex-col space-y-2">
