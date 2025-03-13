@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
@@ -343,6 +344,22 @@
   100% { background-position: 1000px 0; }
 }
 
+@keyframes elegant-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes elegant-slide-in {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes border-glow {
+  0% { box-shadow: 0 0 5px rgba(var(--accent), 0.3); }
+  50% { box-shadow: 0 0 15px rgba(var(--accent), 0.5); }
+  100% { box-shadow: 0 0 5px rgba(var(--accent), 0.3); }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -355,6 +372,18 @@
   background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0) 40%);
   background-size: 1000px 100%;
   animation: shimmer 2s infinite linear;
+}
+
+.animate-elegant-fade-in {
+  animation: elegant-fade-in 0.8s ease-out forwards;
+}
+
+.animate-elegant-slide-in {
+  animation: elegant-slide-in 0.8s ease-out forwards;
+}
+
+.animate-border-glow {
+  animation: border-glow 3s infinite ease-in-out;
 }
 
 /* Elegant shadows */
@@ -372,6 +401,15 @@
 
 .shadow-subtle {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-luxe {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.shadow-luxe-hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* Theme transition */

@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { Video, MonitorSmartphone, CloudLightning, Wand2, Share2, Clock } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
+import { Button } from './ui/button';
 
 const features = [
   {
@@ -91,28 +92,28 @@ const Features = () => {
               className="slide-in-on-scroll group"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="relative p-8 rounded-xl transition-all duration-300 bg-white dark:bg-gray-800 hover:shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
-                <div className="absolute top-0 right-0 h-20 w-20 bg-primary/5 rounded-bl-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="relative p-8 rounded-xl transition-all duration-500 bg-white/80 backdrop-blur-sm dark:bg-gray-800/80 hover:shadow-luxe border border-gray-100/80 dark:border-gray-700/80 overflow-hidden group-hover:border-accent/20">
+                <div className="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-accent/10 to-transparent rounded-bl-full transform translate-x-1/2 -translate-y-1/2 group-hover:from-accent/20 transition-colors duration-300"></div>
                 
-                <div className="h-14 w-14 rounded-full bg-primary text-accent flex items-center justify-center mb-6 dark:bg-primary shadow-md group-hover:shadow-lg transition-all duration-300">
-                  {feature.icon(iconColor)}
+                <div className="h-16 w-16 rounded-full bg-primary/5 text-accent flex items-center justify-center mb-6 relative z-10 group-hover:bg-primary/10 transition-all duration-300 shadow-inner">
+                  <div className="h-14 w-14 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center border border-accent/20 group-hover:border-accent/40 transition-all duration-300">
+                    {feature.icon(iconColor)}
+                  </div>
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                <p className="text-foreground/70">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
+                <p className="text-foreground/70 mb-6">{feature.description}</p>
                 
-                <div className="mt-6 h-px w-12 bg-accent group-hover:w-16 transition-all duration-300"></div>
+                <div className="h-px w-12 bg-accent group-hover:w-20 transition-all duration-500"></div>
               </div>
             </div>
           ))}
         </div>
         
         <div className="mt-16 text-center">
-          <div className="inline-block p-px bg-gradient-to-r from-primary/20 via-accent to-primary/20 rounded-full">
-            <div className="bg-white dark:bg-gray-800 rounded-full px-8 py-3 text-sm font-medium">
-              Explore our comprehensive <span className="text-primary">feature library</span>
-            </div>
-          </div>
+          <Button variant="luxe" size="luxe" className="mx-auto">
+            Explore our comprehensive feature library
+          </Button>
         </div>
       </div>
     </section>
