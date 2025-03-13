@@ -85,7 +85,7 @@ const Features = () => {
               className="slide-in-on-scroll feature-card dark:bg-gray-800 dark:border-gray-700"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-5 dark:bg-primary/20">
+              <div className="h-12 w-12 rounded-full bg-primary text-accent flex items-center justify-center mb-5 dark:bg-primary">
                 {feature.icon(iconColor)}
               </div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
