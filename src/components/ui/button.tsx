@@ -19,13 +19,16 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // New jade-gold variant for CTAs
-        "jade-gold": "bg-accent text-primary hover:bg-accent/90",
+        // Jade-gold variants
+        "jade-gold": "bg-accent text-primary hover:bg-accent/90 shadow-md",
+        "jade-gold-outline": "border-2 border-accent text-primary bg-transparent hover:bg-accent/10",
+        "jade-gold-ghost": "text-primary hover:bg-accent/20",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-md px-10 text-base",
         icon: "h-10 w-10",
       },
     },

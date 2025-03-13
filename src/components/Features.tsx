@@ -64,12 +64,18 @@ const Features = () => {
   }, []);
   
   return (
-    <section ref={featuresRef} className="section-spacing bg-gray-50 dark:bg-gray-900">
-      <div className="container-custom">
+    <section ref={featuresRef} className="section-spacing relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 -z-10"></div>
+      <div className="absolute top-0 left-0 w-1/2 h-full bg-primary/5 -z-5"></div>
+      
+      <div className="container-custom relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 slide-in-on-scroll">
-          <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-4">
-            Why Choose Berrycast
-          </span>
+          <div className="inline-block mb-8">
+            <span className="relative inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-2">
+              Why Choose Berrycast
+            </span>
+            <span className="block h-px w-12 bg-accent mx-auto mt-2"></span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
             Powerful features to supercharge your communication
           </h2>
@@ -78,20 +84,35 @@ const Features = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="slide-in-on-scroll feature-card dark:bg-gray-800 dark:border-gray-700"
+              className="slide-in-on-scroll group"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="h-12 w-12 rounded-full bg-primary text-accent flex items-center justify-center mb-5 dark:bg-primary">
-                {feature.icon(iconColor)}
+              <div className="relative p-8 rounded-xl transition-all duration-300 bg-white dark:bg-gray-800 hover:shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <div className="absolute top-0 right-0 h-20 w-20 bg-primary/5 rounded-bl-full transform translate-x-1/2 -translate-y-1/2"></div>
+                
+                <div className="h-14 w-14 rounded-full bg-primary text-accent flex items-center justify-center mb-6 dark:bg-primary shadow-md group-hover:shadow-lg transition-all duration-300">
+                  {feature.icon(iconColor)}
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
+                <p className="text-foreground/70">{feature.description}</p>
+                
+                <div className="mt-6 h-px w-12 bg-accent group-hover:w-16 transition-all duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-foreground/70">{feature.description}</p>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <div className="inline-block p-px bg-gradient-to-r from-primary/20 via-accent to-primary/20 rounded-full">
+            <div className="bg-white dark:bg-gray-800 rounded-full px-8 py-3 text-sm font-medium">
+              Explore our comprehensive <span className="text-primary">feature library</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
