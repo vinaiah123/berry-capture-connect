@@ -15,7 +15,7 @@ const SalesUseCasePage = () => {
     {
       id: 'prospecting',
       title: 'Prospecting',
-      description: 'Create personalized video messages that cut through the noise and get your prospects' attention.',
+      description: 'Create personalized video messages that cut through the noise and get your prospects\' attention.',
       benefits: [
         'Increase open rates with video thumbnails',
         'Build trust with face-to-face communication',
@@ -27,7 +27,7 @@ const SalesUseCasePage = () => {
     {
       id: 'demos',
       title: 'Product demos',
-      description: 'Record engaging product demos that showcase your product's value and address prospect questions.',
+      description: 'Record engaging product demos that showcase your product\'s value and address prospect questions.',
       benefits: [
         'Create reusable demo libraries',
         'Personalize demos for each prospect',
