@@ -7,6 +7,7 @@ import Features from '@/components/Features';
 import UseCases from '@/components/UseCases';
 import Pricing from '@/components/Pricing';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { ArrowRight, Video, Laptop, CirclePlay, ArrowUpRight } from 'lucide-react';
 
 const Testimonial = ({ quote, author, role, company, image }) => (
@@ -73,6 +74,11 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO 
+        title="Berry Capture Connect - Premium Screen Recording Solution" 
+        description="Communicate with elegance and sophistication. The ultimate luxury screen recording and video hosting solution for elite professionals."
+      />
+      
       <Navbar />
       
       {/* Hero Section */}
