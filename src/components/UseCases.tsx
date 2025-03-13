@@ -192,3 +192,4 @@ const UseCases = () => {
 };
 
 export default UseCases;
+export { useCases }; // Export for reuse in the use case pages
