@@ -40,11 +40,11 @@ const ThemeSwitcher = () => {
               <ToggleGroupItem 
                 key={theme.id} 
                 value={theme.id}
-                className="flex justify-between items-center px-3 py-2 h-auto"
+                className={`flex justify-between items-center px-3 py-2 h-auto ${theme.id === 'jade' ? 'border-2 border-accent' : ''}`}
               >
                 <div className="flex items-center">
                   <div 
-                    className="h-6 w-6 rounded-full mr-3" 
+                    className={`h-6 w-6 rounded-full mr-3 ${theme.id === 'jade' ? 'ring-2 ring-accent ring-offset-2' : ''}`}
                     style={{ backgroundColor: theme.primaryColor }}
                   />
                   <div className="text-left">
@@ -53,7 +53,7 @@ const ThemeSwitcher = () => {
                   </div>
                 </div>
                 {currentTheme === theme.id && (
-                  <div className="h-2 w-2 rounded-full bg-primary" />
+                  <div className={`h-2 w-2 rounded-full ${theme.id === 'jade' ? 'bg-accent' : 'bg-primary'}`} />
                 )}
               </ToggleGroupItem>
             ))}

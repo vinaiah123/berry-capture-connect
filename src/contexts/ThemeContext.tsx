@@ -42,7 +42,7 @@ const defaultThemes = [
     name: 'Jade Gold',
     description: 'Elegant & Prosperous',
     primaryColor: 'hsl(160, 50%, 30%)',
-    accentColor: 'hsl(45, 90%, 85%)',
+    accentColor: 'hsl(45, 90%, 70%)',
   },
   {
     id: 'teal' as ThemeType,
@@ -54,7 +54,7 @@ const defaultThemes = [
 ];
 
 const ThemeContext = createContext<ThemeContextType>({
-  currentTheme: 'berry',
+  currentTheme: 'jade',
   setTheme: () => {},
   themes: defaultThemes,
 });
@@ -64,7 +64,7 @@ export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeType>(() => {
     const savedTheme = localStorage.getItem('berrycast-theme');
-    return (savedTheme as ThemeType) || 'berry';
+    return (savedTheme as ThemeType) || 'jade';
   });
 
   const setTheme = (theme: ThemeType) => {
