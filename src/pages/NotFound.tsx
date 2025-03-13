@@ -22,7 +22,7 @@ const NotFound = () => {
       <main className="flex-grow flex items-center justify-center p-6 bg-gradient-to-br from-background to-accent/30">
         <div className="max-w-md w-full text-center">
           <div className="mb-8">
-            <span className="text-9xl font-bold bg-gradient-to-r from-berry-600 to-berry-800 bg-clip-text text-transparent">404</span>
+            <span className="text-9xl font-bold bg-gradient-to-r from-berry-500 to-berry-700 bg-clip-text text-transparent">404</span>
           </div>
           <h1 className="text-3xl font-semibold mb-4">Path not found</h1>
           <p className="text-foreground/70 mb-8">
