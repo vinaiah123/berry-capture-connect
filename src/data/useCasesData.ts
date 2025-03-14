@@ -54,20 +54,20 @@ export const useCases: UseCase[] = [
   {
     id: 'support',
     title: 'Support',
-    description: 'Answer customer questions with visual explanations and step-by-step guides.',
+    description: 'Deliver fast, clear, and personal customer support with video messages.',
     icon: '🛟',
     image: 'https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?q=80&w=1974&auto=format&fit=crop',
     examples: [
-      'Help desk responses',
-      'Troubleshooting guides',
-      'Feature walkthroughs',
-      'Customer onboarding'
+      'Visual ticket responses',
+      'Asynchronous support',
+      'Self-service resources',
+      'Troubleshooting guides'
     ],
     benefits: [
-      'Reduce ticket resolution time by 66%',
-      'Improve customer satisfaction by 89%',
-      'Decrease support tickets by 40%',
-      'Lower support costs by 27%'
+      'Reduce resolution time by 40%',
+      'Improve satisfaction by 62%',
+      'Enhance information retention by 60%',
+      'Create human connection with video'
     ],
     videoUrl: '/demo-support.mp4'
   },

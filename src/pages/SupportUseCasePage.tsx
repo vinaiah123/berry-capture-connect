@@ -14,40 +14,40 @@ const SupportUseCasePage = () => {
   const supportTabs = [
     {
       id: 'visual',
-      title: 'Visual answers',
+      title: 'Faster Resolutions',
       icon: <MessageSquare className="h-5 w-5" />,
-      description: 'Provide clear visual explanations to solve customer issues faster.',
+      description: 'Show, don't tell—solve customer issues with a quick screen recording instead of typing long explanations.',
       benefits: [
-        'Show, don\'t just tell with screen recordings',
-        'Reduce back-and-forth communications',
-        'Solve problems up to 66% faster',
-        'Increase customer satisfaction'
+        'Reduce ticket resolution time by 40%',
+        'Eliminate back-and-forth messages',
+        'Solve complex problems visually',
+        'Improve first contact resolution rates'
       ],
       image: 'https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?q=80&w=1974&auto=format&fit=crop'
     },
     {
-      id: 'onboarding',
-      title: 'Customer onboarding',
+      id: 'personal',
+      title: 'More Personal, More Trust',
       icon: <Users className="h-5 w-5" />,
-      description: 'Create reusable onboarding videos to welcome and educate new customers.',
+      description: 'Adding a face and voice to your support makes customers feel heard and valued, building trust and loyalty.',
       benefits: [
-        'Standardize your onboarding process',
-        'Reduce time spent on repetitive training',
-        'Improve customer activation rates',
-        'Scale your customer success efforts'
+        'Create human connection with video',
+        'Increase customer satisfaction by 62%',
+        'Build stronger brand loyalty',
+        'Make customers feel valued and heard'
       ],
       image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop'
     },
     {
-      id: 'knowledge',
-      title: 'Knowledge base',
+      id: 'engagement',
+      title: 'Better Engagement',
       icon: <Headset className="h-5 w-5" />,
-      description: 'Build a comprehensive video knowledge base for self-service support.',
+      description: 'Customers retain visual information 60% better than text-based responses, avoiding misunderstandings.',
       benefits: [
-        'Reduce support ticket volume by 40%',
-        'Create consistent help documentation',
-        'Empower customers to solve issues themselves',
-        'Make updates to documentation in minutes'
+        'Improve information retention by 60%',
+        'Show exactly what to do with visuals',
+        'Avoid misunderstandings and confusion',
+        'Create clear, memorable support'
       ],
       image: 'https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?q=80&w=2070&auto=format&fit=crop'
     },
@@ -55,13 +55,13 @@ const SupportUseCasePage = () => {
 
   const testimonials = [
     {
-      quote: "Since using Berrycast, our support team has reduced resolution times by 66%. Our customers love receiving visual explanations instead of lengthy text.",
+      quote: "Berrycast has transformed our support workflow. Instead of endless back-and-forth, we send a 2-minute video and our customers get instant clarity.",
       author: "Sarah Chen",
       role: "Head of Customer Support",
       company: "GrowthTech"
     },
     {
-      quote: "Berrycast has transformed our support process. Our team now creates video responses in minutes, and our CSAT scores have improved by 27%.",
+      quote: "Our resolution time dropped by 40% after switching to video responses. Customers love the personal touch and our team saves hours every day.",
       author: "Michael Reed",
       role: "Director of Customer Success",
       company: "CloudSystems"
@@ -69,10 +69,19 @@ const SupportUseCasePage = () => {
   ];
 
   const stats = [
-    { value: '66%', label: 'Faster resolution' },
-    { value: '40%', label: 'Fewer tickets' },
-    { value: '27%', label: 'Higher CSAT' },
+    { value: '40%', label: 'Faster resolutions' },
+    { value: '60%', label: 'Better retention' },
+    { value: '62%', label: 'Higher satisfaction' },
     { value: '3.5x', label: 'Support efficiency' }
+  ];
+
+  const features = [
+    { title: "One-Click Recording", description: "Capture your screen, camera, and voice in one go" },
+    { title: "Instant Sharing", description: "Share a link, no downloads required" },
+    { title: "CRM & Helpdesk Integrations", description: "Connect with Zendesk, Intercom, Freshdesk, and more" },
+    { title: "Viewer Analytics", description: "Know when customers watch your videos" },
+    { title: "Custom Branding", description: "Add your logo and colors to reinforce your identity" },
+    { title: "Interactive Comments", description: "Let customers respond directly in the video thread" }
   ];
 
   const activeTabContent = supportTabs.find(tab => tab.id === activeTab);
@@ -80,10 +89,10 @@ const SupportUseCasePage = () => {
   return (
     <>
       <Helmet>
-        <title>Support Teams Use Case | Berrycast</title>
+        <title>Elevate Your Customer Support with Video Messaging | Berrycast</title>
         <meta 
           name="description" 
-          content="Help your support team deliver exceptional customer service with Berrycast's visual communication tools. Answer support tickets faster and with greater clarity."
+          content="Deliver fast, clear, and personal customer support with video messages that eliminate back-and-forth emails. Berrycast enables support teams to record their screen, voice, and face, creating a human connection."
         />
       </Helmet>
 
@@ -97,14 +106,14 @@ const SupportUseCasePage = () => {
               <div className="animate-on-scroll">
                 <div className="inline-block mb-6">
                   <span className="bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full">
-                    Support Teams
+                    Customer Support
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">
-                  Solve customer issues faster with visual support
+                  Elevate Your Customer Support with Video Messaging
                 </h1>
                 <p className="text-lg text-foreground/70 mb-8 text-balance">
-                  Help your support team deliver exceptional customer service with video messages that reduce resolution time and increase satisfaction.
+                  Deliver fast, clear, and personal customer support with video messages that eliminate back-and-forth emails. Create a human connection that improves satisfaction and reduces resolution time.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="shadow-sm">
@@ -151,15 +160,15 @@ const SupportUseCasePage = () => {
           </div>
         </section>
 
-        {/* Video feature showcase */}
+        {/* Key Benefits showcase */}
         <section className="section-spacing bg-white dark:bg-gray-800">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
-                How Berrycast works for support teams
+                Key Benefits of Video Support with Berrycast
               </h2>
               <p className="text-lg text-foreground/70 text-balance">
-                Give your support team the tools they need to deliver exceptional customer service with visual explanations.
+                Transform your customer support experience with video messaging that creates human connection.
               </p>
             </div>
 
@@ -221,14 +230,6 @@ const SupportUseCasePage = () => {
                               </div>
                             ))}
                           </div>
-                          
-                          <Button 
-                            variant="link" 
-                            className="p-0 h-auto text-primary font-medium hover:underline"
-                          >
-                            <span>Learn more about {activeTabContent.title}</span>
-                            <ArrowRight className="h-4 w-4 ml-1" />
-                          </Button>
                         </div>
                       </div>
                       
@@ -262,20 +263,48 @@ const SupportUseCasePage = () => {
           </div>
         </section>
 
-        {/* Use cases scenarios */}
+        {/* Features section */}
         <section className="section-spacing bg-gradient-to-b from-background to-secondary/10">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
-                How support teams use Berrycast
+                Features That Make Berrycast Perfect for Support Teams
               </h2>
               <p className="text-lg text-foreground/70 text-balance">
-                From resolving complex issues to creating reusable help content, see how Berrycast empowers support teams.
+                Purpose-built tools that help your support team deliver exceptional customer service with video.
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 animate-on-scroll">
-              <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+              {features.map((feature, index) => (
+                <div key={index} className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+                    <Check className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                  <p className="text-foreground/70">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How support teams use it */}
+        <section className="section-spacing bg-white dark:bg-gray-800">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
+                How Support Teams Use Berrycast
+              </h2>
+              <p className="text-lg text-foreground/70 text-balance">
+                From solving complex issues to creating reusable help content, see how Berrycast empowers support teams.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 animate-on-scroll">
+              <div className="bg-gradient-to-br from-background to-secondary/5 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
                   <MessageSquare className="h-6 w-6" />
                 </div>
@@ -299,31 +328,31 @@ const SupportUseCasePage = () => {
                 </ul>
               </div>
               
-              <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+              <div className="bg-gradient-to-br from-background to-secondary/5 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
                   <Users className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Team training</h3>
+                <h3 className="text-xl font-semibold mb-3">Asynchronous Support</h3>
                 <p className="text-foreground/70 mb-6">
-                  Onboard new support agents faster with reusable training videos.
+                  Record once, answer hundreds of similar queries with pre-recorded responses.
                 </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Standardize knowledge sharing</span>
+                    <span className="text-sm">Build a video knowledge base</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Reduce training time by 45%</span>
+                    <span className="text-sm">Customers watch on their own time</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Update training materials quickly</span>
+                    <span className="text-sm">No need to schedule live calls</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+              <div className="bg-gradient-to-br from-background to-secondary/5 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
                   <Headset className="h-6 w-6" />
                 </div>
@@ -351,12 +380,12 @@ const SupportUseCasePage = () => {
         </section>
 
         {/* Testimonials section */}
-        <section className="section-spacing bg-white dark:bg-gray-800">
+        <section className="section-spacing bg-gradient-to-b from-background to-secondary/10">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
               <div className="inline-block mb-6">
                 <span className="bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full">
-                  Customer Success Stories
+                  Why Support Teams Love Berrycast
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
@@ -369,7 +398,7 @@ const SupportUseCasePage = () => {
 
             <div className="grid md:grid-cols-2 gap-8 animate-on-scroll">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-gradient-to-br from-background to-secondary/5 p-8 rounded-xl shadow-sm">
+                <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
                   <div>
                     <div className="flex items-center text-amber-400 mb-4">
                       {[...Array(5)].map((_, i) => (
@@ -395,10 +424,10 @@ const SupportUseCasePage = () => {
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to transform your customer support?
+                Ready to deliver effortless, human support?
               </h2>
               <p className="text-xl opacity-90 mb-8">
-                Join thousands of support professionals using Berrycast to solve customer issues faster.
+                Turn customer questions into quick, clear video explanations that build trust and save time.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" variant="jade-gold" className="text-lg">

@@ -37,7 +37,29 @@ export function useScrollAnimation() {
     animatedElements.forEach(el => observer.observe(el));
     
     return () => {
-      animatedElements.forEach(el => observer.unobserve(el));
+      animatedElements.forEach(el => {
+        if (el) observer.unobserve(el);
+      });
     };
+  }, []);
+}
+
+export function useParallaxScroll() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const parallaxElements = document.querySelectorAll('.parallax');
+      
+      parallaxElements.forEach((element) => {
+        const speed = element.getAttribute('data-speed') || '0.5';
+        const movement = scrollPosition * parseFloat(speed);
+        
+        // Apply transform
+        (element as HTMLElement).style.transform = `translateY(${movement}px)`;
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 }

@@ -30,6 +30,20 @@ const UseCaseDetail: React.FC<UseCaseDetailProps> = ({ useCase, onLearnMore, isA
           
           <UseCaseExample examples={useCase.examples} />
           
+          {useCase.benefits && useCase.benefits.length > 0 && (
+            <div className="mb-6">
+              <p className="font-medium mb-3 text-primary">Key Benefits:</p>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                {useCase.benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="text-primary mr-1.5">•</span>
+                    <span>{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
           <Button 
             onClick={() => onLearnMore(useCase.id)}
             variant="link" 
