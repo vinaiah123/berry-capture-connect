@@ -17,7 +17,7 @@ const SupportUseCasePage = () => {
       id: 'visual',
       title: 'Faster Resolutions, Fewer Emails',
       icon: <MessageSquare className="h-5 w-5" />,
-      description: 'Show, don't tell—solve customer issues with a quick screen recording instead of typing long explanations.',
+      description: 'Show, don\'t tell—solve customer issues with a quick screen recording instead of typing long explanations.',
       benefits: [
         'Reduce ticket resolution time by 40%',
         'Eliminate back-and-forth messages',
