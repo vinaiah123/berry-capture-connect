@@ -5,16 +5,17 @@ import { ArrowRight, Check, Play, MessageSquare, Headset, Users } from 'lucide-r
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useScrollAnimation } from '@/hooks/use-scroll';
+import { useScrollAnimation, useParallaxScroll } from '@/hooks/use-scroll';
 
 const SupportUseCasePage = () => {
   const [activeTab, setActiveTab] = useState('visual');
   useScrollAnimation();
+  useParallaxScroll();
 
   const supportTabs = [
     {
       id: 'visual',
-      title: 'Faster Resolutions',
+      title: 'Faster Resolutions, Fewer Emails',
       icon: <MessageSquare className="h-5 w-5" />,
       description: 'Show, don't tell—solve customer issues with a quick screen recording instead of typing long explanations.',
       benefits: [
@@ -40,7 +41,7 @@ const SupportUseCasePage = () => {
     },
     {
       id: 'engagement',
-      title: 'Better Engagement',
+      title: 'Better Engagement, Clearer Communication',
       icon: <Headset className="h-5 w-5" />,
       description: 'Customers retain visual information 60% better than text-based responses, avoiding misunderstandings.',
       benefits: [
@@ -51,6 +52,19 @@ const SupportUseCasePage = () => {
       ],
       image: 'https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?q=80&w=2070&auto=format&fit=crop'
     },
+    {
+      id: 'async',
+      title: 'Asynchronous, Yet Personal',
+      icon: <MessageSquare className="h-5 w-5" />,
+      description: 'Record once, answer hundreds of similar queries with pre-recorded responses that feel personal.',
+      benefits: [
+        'Build a video knowledge base',
+        'Customers watch on their own time',
+        'No need to schedule live calls',
+        'Scale your support efficiently'
+      ],
+      image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070&auto=format&fit=crop'
+    }
   ];
 
   const testimonials = [
@@ -110,13 +124,13 @@ const SupportUseCasePage = () => {
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">
-                  Elevate Your Customer Support with Video Messaging
+                  🚀 Elevate Your Customer Support with Video Messaging
                 </h1>
                 <p className="text-lg text-foreground/70 mb-8 text-balance">
                   Deliver fast, clear, and personal customer support with video messages that eliminate back-and-forth emails. Create a human connection that improves satisfaction and reduces resolution time.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="shadow-sm">
+                  <Button size="lg" variant="jade-gold" className="shadow-sm">
                     Try for free
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>

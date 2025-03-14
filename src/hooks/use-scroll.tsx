@@ -60,6 +60,10 @@ export function useParallaxScroll() {
     };
     
     window.addEventListener('scroll', handleScroll);
+    
+    // Initial call to set positions
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 }
