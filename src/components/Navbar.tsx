@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Compass } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { isDarkMode } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,12 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Close menu when route changes
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
 
   useEffect(() => {
     // Prevent body scrolling when mobile menu is open

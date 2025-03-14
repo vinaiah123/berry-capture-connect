@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, Check } from 'lucide-react';
 
 const useCases = [
@@ -61,6 +61,11 @@ const useCases = [
 const UseCases = () => {
   const [activeTab, setActiveTab] = useState('marketing');
   const activeCase = useCases.find(u => u.id === activeTab) || useCases[0];
+  const navigate = useNavigate();
+  
+  const handleLearnMore = (useCaseId: string) => {
+    navigate(`/use-cases/${useCaseId}`);
+  };
   
   return (
     <section className="section-spacing bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
@@ -146,13 +151,13 @@ const UseCases = () => {
                           ))}
                         </div>
                         
-                        <Link 
-                          to={`/use-cases/${useCase.id}`} 
+                        <button 
+                          onClick={() => handleLearnMore(useCase.id)}
                           className="inline-flex items-center text-primary font-medium hover:underline"
                         >
                           <span>Learn more about Berrycast for {useCase.title}</span>
                           <ChevronRight className="h-4 w-4 ml-1" />
-                        </Link>
+                        </button>
                       </div>
                     </div>
                     
