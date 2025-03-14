@@ -64,9 +64,9 @@ export const useCases: UseCase[] = [
       'Customer onboarding'
     ],
     benefits: [
-      'Reduce ticket resolution time by 45%',
+      'Reduce ticket resolution time by 66%',
       'Improve customer satisfaction by 89%',
-      'Decrease support tickets by 38%',
+      'Decrease support tickets by 40%',
       'Lower support costs by 27%'
     ],
     videoUrl: '/demo-support.mp4'
