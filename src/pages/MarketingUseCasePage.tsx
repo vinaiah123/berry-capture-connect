@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Check, Play, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,9 +7,19 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useCases } from '@/components/UseCases';
+import { useScrollAnimation } from '@/hooks/use-scroll';
 
 const MarketingUseCasePage = () => {
   const [activeTab, setActiveTab] = useState('demos');
+  useScrollAnimation();
+
+  useEffect(() => {
+    // Add a class to the body for page-specific styling
+    document.body.classList.add('use-case-page', 'marketing-page');
+    return () => {
+      document.body.classList.remove('use-case-page', 'marketing-page');
+    };
+  }, []);
 
   const marketingTabs = [
     {
@@ -88,10 +98,10 @@ const MarketingUseCasePage = () => {
 
       <main className="pt-16">
         {/* Hero section */}
-        <section className="section-spacing bg-gradient-to-b from-background to-secondary/50">
+        <section className="section-spacing bg-gradient-to-b from-background to-secondary/50 dark:from-gray-900 dark:to-gray-800">
           <div className="container-custom pt-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="slide-in-on-scroll">
+              <div className="animate-on-scroll">
                 <div className="inline-block mb-6">
                   <span className="relative inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-2">
                     Marketing Teams
@@ -114,7 +124,7 @@ const MarketingUseCasePage = () => {
                   </Button>
                 </div>
               </div>
-              <div className="relative slide-in-on-scroll">
+              <div className="relative animate-on-scroll">
                 <div className="rounded-xl overflow-hidden shadow-elevated relative z-10">
                   <img 
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
@@ -135,9 +145,9 @@ const MarketingUseCasePage = () => {
         </section>
 
         {/* Stats section */}
-        <section className="py-12 bg-background">
+        <section className="py-12 bg-background dark:bg-gray-900">
           <div className="container-custom">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center slide-in-on-scroll">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center animate-on-scroll">
               {stats.map((stat, index) => (
                 <div key={index} className="p-6 rounded-xl bg-white shadow-subtle dark:bg-gray-800">
                   <p className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</p>
@@ -151,7 +161,7 @@ const MarketingUseCasePage = () => {
         {/* How it works section */}
         <section className="section-spacing bg-white dark:bg-gray-800">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16 slide-in-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
                 How Berrycast works for marketing teams
               </h2>
@@ -160,7 +170,7 @@ const MarketingUseCasePage = () => {
               </p>
             </div>
 
-            <div className="bg-background dark:bg-gray-900 shadow-xl rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 slide-in-on-scroll">
+            <div className="bg-background dark:bg-gray-900 shadow-xl rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 animate-on-scroll">
               <div className="grid md:grid-cols-5">
                 <div className="md:col-span-2 border-r border-gray-100 dark:border-gray-700">
                   <div className="p-2">
@@ -254,9 +264,9 @@ const MarketingUseCasePage = () => {
         </section>
 
         {/* Testimonials section */}
-        <section className="section-spacing bg-gradient-to-b from-background to-secondary/50">
+        <section className="section-spacing bg-gradient-to-b from-background to-secondary/50 dark:from-gray-900 dark:to-gray-800">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16 slide-in-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
               <div className="inline-block mb-6">
                 <span className="relative inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-2">
                   Success Stories
@@ -270,7 +280,7 @@ const MarketingUseCasePage = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 slide-in-on-scroll">
+            <div className="grid md:grid-cols-2 gap-8 animate-on-scroll">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-subtle">
                   <div>
@@ -296,7 +306,7 @@ const MarketingUseCasePage = () => {
         {/* CTA Section */}
         <section className="section-spacing bg-primary text-white">
           <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center slide-in-on-scroll">
+            <div className="max-w-3xl mx-auto text-center animate-on-scroll">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to transform your marketing content?
               </h2>

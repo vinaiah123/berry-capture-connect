@@ -6,6 +6,8 @@ export interface UseCase {
   icon: string;
   image: string;
   examples: string[];
+  benefits?: string[];
+  videoUrl?: string;
 }
 
 export const useCases: UseCase[] = [
@@ -20,7 +22,14 @@ export const useCases: UseCase[] = [
       'Marketing tutorials',
       'Social media content',
       'Campaign reviews'
-    ]
+    ],
+    benefits: [
+      'Increase engagement rates by 40%',
+      'Save 65% of content creation time',
+      'Create 3x more marketing assets',
+      'Boost conversion rates by 25%'
+    ],
+    videoUrl: '/demo-marketing.mp4'
   },
   {
     id: 'sales',
@@ -33,7 +42,14 @@ export const useCases: UseCase[] = [
       'Product walkthroughs',
       'Proposal explanations',
       'Follow-up messages'
-    ]
+    ],
+    benefits: [
+      'Close 30% more deals',
+      'Reduce sales cycle by 35%',
+      'Increase response rates by 3x',
+      'Improve demo-to-meeting conversion'
+    ],
+    videoUrl: '/demo-sales.mp4'
   },
   {
     id: 'support',
@@ -46,7 +62,14 @@ export const useCases: UseCase[] = [
       'Troubleshooting guides',
       'Feature walkthroughs',
       'Customer onboarding'
-    ]
+    ],
+    benefits: [
+      'Reduce ticket resolution time by 45%',
+      'Improve customer satisfaction by 89%',
+      'Decrease support tickets by 38%',
+      'Lower support costs by 27%'
+    ],
+    videoUrl: '/demo-support.mp4'
   },
   {
     id: 'education',
@@ -59,6 +82,13 @@ export const useCases: UseCase[] = [
       'Assignment feedback',
       'Student tutorials',
       'Course materials'
-    ]
+    ],
+    benefits: [
+      'Increase student engagement by 82%',
+      'Improve comprehension by 63%',
+      'Save 45% time on feedback',
+      'Create 3x more educational content'
+    ],
+    videoUrl: '/demo-education.mp4'
   },
 ];

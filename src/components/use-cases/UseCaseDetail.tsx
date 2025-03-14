@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Play } from 'lucide-react';
 import { UseCase } from '@/data/useCasesData';
 import UseCaseExample from './UseCaseExample';
+import { Button } from '@/components/ui/button';
 
 interface UseCaseDetailProps {
   useCase: UseCase;
@@ -29,13 +30,14 @@ const UseCaseDetail: React.FC<UseCaseDetailProps> = ({ useCase, onLearnMore, isA
           
           <UseCaseExample examples={useCase.examples} />
           
-          <button 
+          <Button 
             onClick={() => onLearnMore(useCase.id)}
-            className="inline-flex items-center text-primary font-medium hover:underline"
+            variant="link" 
+            className="p-0 h-auto text-primary font-medium hover:underline"
           >
             <span>Learn more about Berrycast for {useCase.title}</span>
             <ChevronRight className="h-4 w-4 ml-1" />
-          </button>
+          </Button>
         </div>
       </div>
       
@@ -49,10 +51,8 @@ const UseCaseDetail: React.FC<UseCaseDetailProps> = ({ useCase, onLearnMore, isA
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <div className="glassmorphism rounded-lg p-4 backdrop-blur-lg bg-white/10 border-white/20 inline-block">
               <div className="flex items-center space-x-2">
-                <div className="h-8 w-8 rounded-full bg-primary text-accent flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                  </svg>
+                <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center">
+                  <Play className="h-4 w-4 ml-0.5" />
                 </div>
                 <div>
                   <p className="text-white text-sm font-medium">Watch Demo</p>
