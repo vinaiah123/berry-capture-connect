@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Compass } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { isDarkMode } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,6 +48,11 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
     setActiveDropdown(null);
+  };
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    closeMenu();
   };
 
   return (
@@ -153,10 +159,10 @@ const Navbar = () => {
                 activeDropdown === 'features' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}>
                 <div className="ml-4 flex flex-col space-y-1 border-l-2 border-primary/20 pl-4 py-2">
-                  <Link to="/features/screen-recorder" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Screen Recorder</Link>
-                  <Link to="/features/ai-tools" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>AI Tools</Link>
-                  <Link to="/features/video-hosting" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Video Hosting</Link>
-                  <Link to="/features/screenshot" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Screenshot Tool</Link>
+                  <button onClick={() => handleNavigation('/features/screen-recorder')} className="p-2 text-left hover:text-primary transition-colors">Screen Recorder</button>
+                  <button onClick={() => handleNavigation('/features/ai-tools')} className="p-2 text-left hover:text-primary transition-colors">AI Tools</button>
+                  <button onClick={() => handleNavigation('/features/video-hosting')} className="p-2 text-left hover:text-primary transition-colors">Video Hosting</button>
+                  <button onClick={() => handleNavigation('/features/screenshot')} className="p-2 text-left hover:text-primary transition-colors">Screenshot Tool</button>
                 </div>
               </div>
               
@@ -172,30 +178,30 @@ const Navbar = () => {
                 activeDropdown === 'use-cases' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}>
                 <div className="ml-4 flex flex-col space-y-1 border-l-2 border-primary/20 pl-4 py-2">
-                  <Link to="/use-cases/marketing" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Marketing</Link>
-                  <Link to="/use-cases/sales" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Sales</Link>
-                  <Link to="/use-cases/support" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Support</Link>
-                  <Link to="/use-cases/education" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Education</Link>
-                  <Link to="/use-cases/engineering" className="p-2 hover:text-primary transition-colors" onClick={closeMenu}>Engineering</Link>
+                  <button onClick={() => handleNavigation('/use-cases/marketing')} className="p-2 text-left hover:text-primary transition-colors">Marketing</button>
+                  <button onClick={() => handleNavigation('/use-cases/sales')} className="p-2 text-left hover:text-primary transition-colors">Sales</button>
+                  <button onClick={() => handleNavigation('/use-cases/support')} className="p-2 text-left hover:text-primary transition-colors">Support</button>
+                  <button onClick={() => handleNavigation('/use-cases/education')} className="p-2 text-left hover:text-primary transition-colors">Education</button>
+                  <button onClick={() => handleNavigation('/use-cases/engineering')} className="p-2 text-left hover:text-primary transition-colors">Engineering</button>
                 </div>
               </div>
               
-              <Link to="/pricing" className="text-lg font-medium p-3 rounded-lg hover:bg-accent/50 transition-colors" onClick={closeMenu}>
+              <button onClick={() => handleNavigation('/pricing')} className="text-lg font-medium p-3 rounded-lg hover:bg-accent/50 transition-colors text-left">
                 Pricing
-              </Link>
+              </button>
               
-              <Link to="/blog" className="text-lg font-medium p-3 rounded-lg hover:bg-accent/50 transition-colors" onClick={closeMenu}>
+              <button onClick={() => handleNavigation('/blog')} className="text-lg font-medium p-3 rounded-lg hover:bg-accent/50 transition-colors text-left">
                 Blog
-              </Link>
+              </button>
             </div>
             
             <div className="flex flex-col space-y-3 pt-4 border-t border-border">
-              <Link to="/login" className="button-outline w-full justify-center" onClick={closeMenu}>
+              <button onClick={() => handleNavigation('/login')} className="button-outline w-full justify-center">
                 Log in
-              </Link>
-              <Link to="/signup" className="button-primary w-full justify-center" onClick={closeMenu}>
+              </button>
+              <button onClick={() => handleNavigation('/signup')} className="button-primary w-full justify-center">
                 Try for Free
-              </Link>
+              </button>
             </div>
           </div>
         </div>
