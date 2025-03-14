@@ -5,11 +5,13 @@ import { useCases } from '@/data/useCasesData';
 import UseCaseTab from './use-cases/UseCaseTab';
 import UseCaseDetail from './use-cases/UseCaseDetail';
 import UseCasesHeader from './use-cases/UseCasesHeader';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const UseCases = () => {
   const [activeTab, setActiveTab] = useState('marketing');
   const activeCase = useCases.find(u => u.id === activeTab) || useCases[0];
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   
   const handleLearnMore = (useCaseId: string) => {
     navigate(`/use-cases/${useCaseId}`);
@@ -22,8 +24,8 @@ const UseCases = () => {
         
         <div className="bg-white dark:bg-gray-800 shadow-xl rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700">
           <div className="grid md:grid-cols-5">
-            <div className="md:col-span-2 border-r border-gray-100 dark:border-gray-700">
-              <div className="p-2">
+            <div className={`${isMobile ? 'overflow-x-auto' : ''} md:col-span-2 border-r border-gray-100 dark:border-gray-700`}>
+              <div className={`p-2 ${isMobile ? 'flex md:block' : ''}`}>
                 {useCases.map((useCase) => (
                   <UseCaseTab
                     key={useCase.id}

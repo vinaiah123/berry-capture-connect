@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Compass } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +12,7 @@ const Navbar = () => {
   const { isDarkMode } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,7 +123,6 @@ const Navbar = () => {
           </Link>
         </div>
         
-        {/* Mobile menu trigger */}
         <div className="lg:hidden flex items-center">
           <button 
             className="relative z-50 flex items-center justify-center p-2 rounded-full bg-primary bg-opacity-10 hover:bg-opacity-20 transition-all"
@@ -138,7 +138,6 @@ const Navbar = () => {
         </div>
       </nav>
       
-      {/* Mobile menu overlay - slides from top */}
       <div 
         className={`lg:hidden fixed inset-0 bg-background z-40 transform transition-transform duration-500 ease-in-out ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
